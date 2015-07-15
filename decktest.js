@@ -1,212 +1,213 @@
+"use strict";
 var deck = [
 {
   rank:1,
-  unicode: "U+1F0A1"
+  unicode: "🂡"
 },
 
 {
   rank:1,
-  unicode: "U+1F0B1"
+  unicode: "🂱"
 },
 {
   rank:1,
-  unicode: "U+1F0C1"
+  unicode: "🃁"
 },
 {
   rank:1,
-  unicode: "U+1F0D1"
+  unicode: "🃑"
 },
 {
   rank:2,
-  unicode: "U+1F0A2"
+  unicode: "🂢"
 },
   {
   rank:2,
-  unicode: "U+1F0B2"
+  unicode: "🂲"
 },
   {
   rank:2,
-  unicode: "U+1F0C2"
+  unicode: "🃂"
 },
   {
   rank:2,
-  unicode: "U+1F0D2"
+  unicode: "🃒"
 },
   {
   rank:3,
-  unicode: "U+1F0A3"
+  unicode: "🂣"
 },
   {
   rank:3,
-  unicode: "U+1F0B3"
+  unicode: "🂳"
 },
   {
   rank:3,
-  unicode: "U+1F0C3"
+  unicode: "🃃"
 },
   {
   rank:3,
-  unicode: "U+1F0D3"
+  unicode: "🃓"
 },
   {
   rank:4,
-  unicode: "U+1F0A4"
+  unicode: "🂤"
 },
   {
   rank:4,
-  unicode: "U+1F0B4"
+  unicode: "🂴"
 },
   {
   rank:4,
-  unicode: "U+1F0C4"
+  unicode: "🃄"
 },
   {
   rank:4,
-  unicode: "U+1F0D4"
+  unicode: "🃔"
 },
   {
   rank:5,
-  unicode: "U+1F0A5"
+  unicode: "🂥"
 },
   {
   rank:5,
-  unicode: "U+1F0B5"
+  unicode: "🂵"
 },
   {
   rank:5,
-  unicode: "U+1F0C5"
+  unicode: "🃅"
 },
   {
   rank:5,
-  unicode: "U+1F0D5"
+  unicode: "🃕"
 },
   {
   rank:6,
-  unicode: "U+1F0A6"
+  unicode: "🂦"
 },
   {
   rank:6,
-  unicode: "U+1F0B6"
+  unicode: "🂶"
 },
   {
   rank:6,
-  unicode: "U+1F0C6"
+  unicode: "🃆"
 },
   {
   rank:6,
-  unicode: "U+1F0D6"
+  unicode: "🃖"
 },
   {
   rank:7,
-  unicode: "U+1F0A7"
+  unicode: "🂧"
 },
   {
   rank:7,
-  unicode: "U+1F0B7"
+  unicode: "🂷"
 },
   {
   rank:7,
-  unicode: "U+1F0C7"
+  unicode: "🃇"
 },
   {
   rank:7,
-  unicode: "U+1F0D7"
+  unicode: "🃗"
 },
   {
   rank:8,
-  unicode: "U+1F0A8"
+  unicode: "🂨"
 },
   {
   rank:8,
-  unicode: "U+1F0B8"
+  unicode: "🂸"
 },
   {
   rank:8,
-  unicode: "U+1F0C8"
+  unicode: "🃈"
 },
   {
   rank:8,
-  unicode: "U+1F0D8"
+  unicode: "🃘"
 },
   {
   rank:9,
-  unicode: "U+1F0A9"
+  unicode: "🂩"
 },
   {
   rank:9,
-  unicode: "U+1F0B9"
+  unicode: "🂹"
 },
   {
   rank:9,
-  unicode: "U+1F0C9"
+  unicode: "🃉"
 },
   {
   rank:9,
-  unicode: "U+1F0D9"
+  unicode: "🃙"
 },
   {
   rank:10,
-  unicode: "U+1F0AA"
+  unicode: "🂪"
 },
   {
   rank:10,
-  unicode: "U+1F0BA"
+  unicode: "🂺"
 },
   {
   rank:10,
-  unicode: "U+1F0CA"
+  unicode: "🃊"
 },
   {
   rank:10,
-  unicode: "U+1F0DA"
+  unicode: "🃚"
 },
   {
   rank:11,
-  unicode: "U+1F0AB"
+  unicode: "🂫"
 },
   {
   rank:11,
-  unicode: "U+1F0BB"
+  unicode: "🂻"
 },
   {
   rank:11,
-  unicode: "U+1F0CB"
+  unicode: "🃋"
 },
   {
   rank:11,
-  unicode: "U+1F0DB"
+  unicode: "🃛"
 },
   {
   rank:12,
-  unicode: "U+1F0AD"
+  unicode: "🂭"
 },
   {
   rank:12,
-  unicode: "U+1F0BD"
+  unicode: "🂽"
 },
   {
   rank:12,
-  unicode: "U+1F0CD"
+  unicode: "🃍"
 },
   {
   rank:12,
-  unicode: "U+1F0DD"
+  unicode: "🃝"
 },
   {
   rank:13,
-  unicode: "U+1F0AE"
+  unicode: "🂮"
 },
   {
   rank:13,
-  unicode: "U+1F0BE"
+  unicode: "🂾"
 },
   {
   rank:13,
-  unicode: "U+1F0CE"
+  unicode: "🃎"
 },
   {
   rank:13,
-  unicode: "U+1F0DE"
+  unicode: "🃞"
 }
 ];
 
@@ -214,17 +215,32 @@ var deck = (_.shuffle(deck));
 // var picked = (_.first(deck).unicode);
 // var pRank = (_.first(deck).rank);
 
-
+function addText(msg) {
+  var newDiv = document.createElement("div");
+  newDiv.setAttribute("class", "card");
+  var newContent = document.createTextNode(msg);
+  var parent = document.getElementById("someId");
+  newDiv.appendChild(newContent);
+    parent.appendChild(newDiv);
+};
 
 function cardDiscard() {
-  var picked = (_.first(deck).unicode)
- document.write(picked);
+  var picked = (_.first(deck).unicode);
+  addText(picked);
+
+ // var p = document.createTextNode(picked);
+ // var o = document.getElementById("someId");
+ // o.appendChild(p) ;
+
  var x = deck.shift();
  return x;
 
 };
 while (deck.length > 0) {
-    document.write(playRound(cardDiscard().rank));
+    var msg = (playRound(cardDiscard().rank));
+  var k = document.createTextNode(msg);
+  var j = document.getElementById("someId");
+  j.appendChild(k);
 };
 
 function playRound(rank) {
@@ -270,7 +286,7 @@ function playRound(rank) {
       result = "King, if it isn't the last king, add to kings cup. If last King, drink kings cup.";
       break;
   }
-  result = "<br>" + result + "<br>";
+  // result = "<br>" + result + "<br>";
   return result;
 };
 // document.write("</br>" + playRound(pRank));
