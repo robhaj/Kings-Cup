@@ -156,7 +156,7 @@ var deck = [
 
 { rank:13,
   unicode: "🃞" }
-  
+
 ];
 
 // Shuffle Deck into new array "shufDeck"
@@ -172,8 +172,10 @@ function addText(message) {
   var parent = document.getElementById("someId");
 
   newDiv.setAttribute("class", "card");
+  var cardArr = document.getElementsByClassName("card");
   newDiv.appendChild(newContent);
   parent.appendChild(newDiv)
+  console.log(cardArr.length);
 
 }
 
@@ -185,6 +187,7 @@ function cardDiscard() {
     var x = shufDeck.shift();
 
     addText(picked);
+
 
     return x;
 
