@@ -1,4 +1,5 @@
 // Create array "deck" containing each card object
+<<<<<<< HEAD
 
 var deck = [
 { rank:1, unicode: "🂡" },
@@ -54,6 +55,36 @@ var deck = [
 { rank:13, unicode: "🃎" },
 { rank:13, unicode: "🃞" }
 ];
+=======
+var deck = [
+  {rank: 1, unicode: "🂡"}, {rank: 1, unicode: "🂱"},
+  {rank: 1, unicode: "🃁"}, {rank: 1, unicode: "🃑"},
+  {rank: 2, unicode: "🂢"}, {rank: 2, unicode: "🂲"},
+  {rank: 2, unicode: "🃂"}, {rank: 2, unicode: "🃒"},
+  {rank: 3, unicode: "🂣"}, {rank: 3, unicode: "🂳"},
+  {rank: 3, unicode: "🃃"}, {rank: 3, unicode: "🃓"},
+  {rank: 4, unicode: "🂤"}, {rank: 4, unicode: "🂴"},
+  {rank: 4, unicode: "🃄"}, {rank: 4, unicode: "🃔"},
+  {rank: 5, unicode: "🂥"}, {rank: 5, unicode: "🂵"},
+  {rank: 5, unicode: "🃅"}, {rank: 5, unicode: "🃕"},
+  {rank: 6, unicode: "🂦"}, {rank: 6, unicode: "🂶"},
+  {rank: 6, unicode: "🃆"}, {rank: 6, unicode: "🃖"},
+  {rank: 7, unicode: "🂧"}, {rank: 7, unicode: "🂷"},
+  {rank: 7, unicode: "🃇"}, {rank: 7, unicode: "🃗"},
+  {rank: 8, unicode: "🂨"}, {rank: 8, unicode: "🂸"},
+  {rank: 8, unicode: "🃈"}, {rank: 8, unicode: "🃘"},
+  {rank: 9, unicode: "🂩"}, {rank: 9, unicode: "🂹"},
+  {rank: 9, unicode: "🃉"}, {rank: 9, unicode: "🃙"},
+  {rank: 10, unicode: "🂪"}, {rank: 10, unicode: "🂺"},
+  {rank: 10, unicode: "🃊"}, {rank: 10, unicode: "🃚"},
+  {rank: 11, unicode: "🂫"}, {rank: 11, unicode: "🂻"},
+  {rank: 11, unicode: "🃋"}, {rank: 11, unicode: "🃛"},
+  {rank: 12, unicode: "🂭"}, {rank: 12, unicode: "🂽"},
+  {rank: 12, unicode: "🃍"}, {rank: 12, unicode: "🃝"},
+  {rank: 13, unicode: "🂮"}, {rank: 13, unicode: "🂾"},
+  {rank: 13, unicode: "🃎"}, {rank: 13, unicode: "🃞"}    
+  ];
+>>>>>>> c26dac65ed5e60cdf02aedb55d11461ac63bea17
 
 // Shuffle Deck into new array "shufDeck"
 
