@@ -34,45 +34,53 @@ var shufDeck = shuffle(deck);
 
 // Styling function using DOM manipulation
 
-function addText(message) {
+function addCard(cardChar) {
 
   var newDiv = document.createElement("div");
-  var newContent = document.createTextNode(message);
+  var newContent = document.createTextNode(cardChar);
   var parent = document.getElementById("someId");
 
 
   newDiv.setAttribute("class", "card");
   newDiv.appendChild(newContent);
-  parent.appendChild(newDiv);
-
-var screenCards = document.getElementsByClassName('card');
-
+  parent.insertBefore(newDiv, parent.firstChild);
+  // parent.appendChild(newDiv);
 
 }
 
-// Pull first card in array and call styling function "addText"
+// Pull first card in array and call styling function "addCard"
 
 function cardDiscard() {
-
+    //if shufDeck empty, func will return undefined
     if (shufDeck[0] !== undefined) {
       var picked = shufDeck[0].unicode;
       var x = shufDeck.shift();
 
-      addText(picked);
+      addCard(picked);
 
       return x;
-
     }
 }
 
 function showCard(num){
 
     for (var i = 0; i < num; i++) {
-      var msg = (playRound(cardDiscard().rank));
-      var k = document.createTextNode(msg);
-      var j = document.getElementById("someId");
-
-    j.appendChild(k);
+      var current = cardDiscard();
+      if (current !== undefined) {
+        var msg = (playRound(current.rank));
+        // var k = document.createTextNode(msg);
+        // var j = document.getElementById("someId");
+        // j.appendChild(k);
+        var newText = document.createElement('span');
+        var parent = document.getElementById('someId');
+        newText.innerText = msg;
+        newText.className = 'rnd-text';
+        parent.insertBefore(newText, parent.firstChild.nextSibling);
+      }
+      else {
+        alert(playRound(current));
+        window.location.reload();
+      }
     }
 }
 
@@ -134,6 +142,9 @@ function playRound(rank) {
 
     case 13:
       result = "King, if it isn't the last king, add to kings cup. If last King, drink kings cup.";
+      break;
+    default:
+      result = "game over";
       break;
 
   }
