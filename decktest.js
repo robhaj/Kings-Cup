@@ -30,7 +30,7 @@ var deck = [
 
 // Shuffle Deck into new array "shufDeck"
 
-var shufDeck = (_.shuffle(deck));
+var shufDeck = shuffle(deck);
 
 // Styling function using DOM manipulation
 
@@ -54,24 +54,27 @@ var screenCards = document.getElementsByClassName('card');
 
 function cardDiscard() {
 
-    var picked = shufDeck[0].unicode;
-    var x = shufDeck.shift();
+    if (shufDeck[0] !== undefined) {
+      var picked = shufDeck[0].unicode;
+      var x = shufDeck.shift();
 
-    addText(picked);
+      addText(picked);
 
-    return x;
+      return x;
 
+    }
 }
 
-function showCard(){
+function showCard(num){
 
-    var msg = (playRound(cardDiscard().rank));
-    var k = document.createTextNode(msg);
-    var j = document.getElementById("someId");
+    for (var i = 0; i < num; i++) {
+      var msg = (playRound(cardDiscard().rank));
+      var k = document.createTextNode(msg);
+      var j = document.getElementById("someId");
 
     j.appendChild(k);
-
-};
+    }
+}
 
 //Function checking card's rank with switch statement for output
 
@@ -137,4 +140,21 @@ function playRound(rank) {
 
   return result;
 
-};
+}
+
+function shuffle(deck) {
+  //take in deck array, return a shuffled version
+  var wrk = deck.slice(0);
+  var shuffled = [];
+  while (wrk.length > 0) {
+    if (wrk.length === 1) {
+      shuffled.push(wrk[0]);
+      break;
+    }
+    else {
+      var i = Math.floor(Math.random() * wrk.length);
+      shuffled.push(wrk.splice(i, 1)[0]);
+    }
+  }
+  return shuffled;
+}
