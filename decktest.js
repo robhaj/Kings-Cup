@@ -46,7 +46,7 @@ function addCard(cardChar) {
   parent.insertBefore(newDiv, parent.firstChild);
   // parent.appendChild(newDiv);
 
-}
+} 
 
 // Pull first card in array and call styling function "addCard"
 
@@ -78,7 +78,7 @@ function showCard(num){
         parent.insertBefore(newText, parent.firstChild.nextSibling);
       }
       else {
-        alert(playRound(current));
+        alert("Game Over!");
         window.location.reload();
       }
     }
@@ -142,9 +142,6 @@ function playRound(rank) {
 
     case 13:
       result = "King, if it isn't the last king, add to kings cup. If last King, drink kings cup.";
-      break;
-    default:
-      result = "game over";
       break;
 
   }
